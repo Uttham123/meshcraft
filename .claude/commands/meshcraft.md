@@ -12,9 +12,11 @@ You are building a Figma screen using the **MESH Design System** (Meesho, mobile
 
 4. **Text is set in DM Sans** (the only font available in the cloud plugin context). The user runs the MESH Font Fixer local plugin once at the end to convert everything to Mier B02.
 
-5. **Sandbox file key:** `u6xWbRPNRJgem7EwDrKfqr`
+5. **Always create designs on a new Figma page.** Never place work on an existing page. Before building anything, create a new page in the Sandbox file named in this exact format: `{username} / {DD MMM YYYY HH:MM} / {goal}` where goal is a single lowercase word describing the intent (e.g. `uttham / 17 Apr 2026 14:32 / checkout`). Use `figma.root.insertChild(0, newPage)` so it appears at the top of the page list. Set that page as current before placing any frames.
 
-6. **MESH Library file key:** `i2MPgsD7m0EUVJ9MbaFyZH` (published to sandbox — importComponentByKeyAsync works)
+6. **Sandbox file key:** `u6xWbRPNRJgem7EwDrKfqr`
+
+7. **MESH Library file key:** `i2MPgsD7m0EUVJ9MbaFyZH` (published to sandbox — importComponentByKeyAsync works)
 
 If the user's request needs a component not covered by the pre-mapped keys below, check the **Demand Index** section, import the representative key, `dumpTree()` the instance, add the layer binding to `MESH_LAYER_MAP` in your script, then proceed.
 
