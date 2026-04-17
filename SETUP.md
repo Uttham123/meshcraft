@@ -73,7 +73,18 @@ Replace `YOUR_TOKEN_HERE` with the token you generated in Step 2.
 
 Restart Claude Code after saving. Confirm the MCP is connected — you should see **figma** listed when you run `/mcp` inside a Claude Code session.
 
-### Step 4 — Install the MESH Font Fixer local plugin in Figma
+### Step 4 — Install the `/meshcraft` slash command globally
+
+The `/meshcraft` command lives in `.claude/commands/` inside the repo. Claude Code only loads project-scoped commands when launched from that exact folder. Copy it to your user-level commands directory so it's available in **every** Claude Code session regardless of where you open it:
+
+```bash
+mkdir -p ~/.claude/commands
+cp meshcraft/.claude/commands/meshcraft.md ~/.claude/commands/
+```
+
+Restart Claude Code — you should now see `/meshcraft` in the command list.
+
+### Step 5 — Install the MESH Font Fixer local plugin in Figma
 
 This plugin converts DM Sans → Mier B02 across the whole file. The Claude MCP runs in Figma's cloud context where only Google Fonts are available, so text is authored in DM Sans and this plugin fixes it in one click.
 
@@ -83,7 +94,7 @@ This plugin converts DM Sans → Mier B02 across the whole file. The Claude MCP 
 
 Run it once after any Claude-generated screen to convert fonts across the whole file.
 
-### Step 5 — Get file access
+### Step 6 — Get file access
 
 Request access to both files from your design lead or Figma admin:
 
@@ -94,7 +105,7 @@ Request access to both files from your design lead or Figma admin:
 
 Access level required: **can view** on MESH Library, **can edit** on Sandbox.
 
-### Step 6 — Verify everything works
+### Step 7 — Verify everything works
 
 Open a Claude Code session from inside the `meshcraft/` directory:
 
