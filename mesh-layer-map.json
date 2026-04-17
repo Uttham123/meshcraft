@@ -1,0 +1,238 @@
+{
+  "_comment": "Component key → layer name → T2 semantic token. Used by meshInstance() to auto-bind fills on import.",
+  "_source": "Derived from layer inspection of MESH Library components (i2MPgsD7m0EUVJ9MbaFyZH)",
+  "_sentinel": "__root__ targets the instance root's own fill. Named keys find child layers by exact name.",
+
+  "components": {
+
+    "Button": {
+      "setKey": "eab0a0eb279c7a3a1721ad689f1f6674d4afa49d",
+      "variants": {
+        "Solid_Jamun": {
+          "layers": { "__root__": "color/interactive/primary", "Action": "color/text/inverse" },
+          "textLayer": "Action"
+        },
+        "Ghost_Jamun": {
+          "layers": { "Action": "color/text/brand" },
+          "textLayer": "Action"
+        },
+        "Ghost_Black": {
+          "layers": { "Action": "color/text/primary" },
+          "textLayer": "Action"
+        },
+        "Link": {
+          "layers": { "Action": "color/text/link" },
+          "textLayer": "Action"
+        }
+      }
+    },
+
+    "Badge": {
+      "setKey": "a4addb418d2023b5e113b642d527d85cae8532ee",
+      "variants": {
+        "Neutral": {
+          "layers": { "__root__": "color/background/secondary", "Label": "color/text/secondary" },
+          "textLayer": "Label"
+        },
+        "Positive": {
+          "layers": { "__root__": "color/feedback/positive/surface", "Label": "color/feedback/positive/text" },
+          "textLayer": "Label"
+        },
+        "Negative": {
+          "layers": { "__root__": "color/feedback/error/surface", "Label": "color/feedback/error/text" },
+          "textLayer": "Label"
+        },
+        "Highlight": {
+          "layers": { "__root__": "color/ai/surface", "Label": "color/ai/text" },
+          "textLayer": "Label"
+        },
+        "Yellow": {
+          "layers": { "__root__": "color/feedback/warning-soft/surface", "Label": "color/text/primary" },
+          "textLayer": "Label"
+        },
+        "Orange": {
+          "layers": { "__root__": "color/feedback/warning-strong/surface", "Label": "color/text/primary" },
+          "textLayer": "Label"
+        }
+      }
+    },
+
+    "Pill": {
+      "setKey": "79c853512b96f6ba18dc05de6b64272ac52b2079",
+      "variants": {
+        "Active": {
+          "layers": { "All": "color/text/brand" },
+          "textLayer": "All"
+        },
+        "Normal": {
+          "layers": { "All": "color/text/secondary" },
+          "textLayer": "All"
+        }
+      }
+    },
+
+    "Appbar": {
+      "setKey": "6281d13c9af1d93a5bb2065e01730c9da3b15cf9",
+      "variants": {
+        "default": {
+          "layers": { "__root__": "color/background/primary", "Title": "color/text/primary" },
+          "textLayer": "Title"
+        }
+      }
+    },
+
+    "Tab": {
+      "setKey": "8fd1556418aa16a28ec70689c629abc59e488a6c",
+      "_note": "Text layers use content as their name (e.g. 'Price', 'Tab 1') — set text manually via inst.findOne(n => n.type === 'TEXT').",
+      "variants": {
+        "Horizontal/Selected": {
+          "layers": {
+            "__root__":       "color/background/primary",
+            "Rectangle 175":  "color/interactive/primary"
+          }
+        },
+        "Horizontal/Default": {
+          "layers": {
+            "__root__": "color/background/primary"
+          }
+        },
+        "Vertical/Selected": {
+          "layers": {
+            "__root__": "color/background/primary",
+            "Div":       "color/interactive/primary",
+            "Ellipse 1": "color/interactive/primary"
+          }
+        },
+        "Vertical/Default": {
+          "layers": {
+            "__root__": "color/background/primary"
+          }
+        }
+      }
+    },
+
+    "Bottomsheet - Header": {
+      "setKey": "f603bca5fea42483e11e9d3ebeffed94dc8cebbf",
+      "variants": {
+        "1line": {
+          "layers": { "__root__": "color/background/primary", "TITLE": "color/text/primary" },
+          "textLayer": "TITLE"
+        },
+        "2line": {
+          "layers": {
+            "__root__":  "color/background/primary",
+            "Title":     "color/text/primary",
+            "Sub-text":  "color/text/secondary"
+          },
+          "textLayer": "Title"
+        },
+        "NoTitle": {
+          "layers": { "__root__": "color/background/primary" }
+        },
+        "1line-back": {
+          "layers": { "__root__": "color/background/primary", "TITLE": "color/text/primary" },
+          "textLayer": "TITLE"
+        }
+      }
+    },
+
+    "Snackbar": {
+      "setKey": "7bb54b5bbf29b56b666560db53abfcd4ffacdd8f",
+      "_note": "Text node name is content-based. Set text via inst.findOne(n => n.type === 'TEXT').",
+      "variants": {
+        "Success": { "layers": { "__root__": "color/feedback/positive/surface" } },
+        "Error":   { "layers": { "__root__": "color/feedback/error/surface" } },
+        "Neutral": { "layers": { "__root__": "color/background/inverse" } },
+        "Info":    { "layers": { "__root__": "color/ai/surface" } }
+      }
+    },
+
+    "Infobanners": {
+      "setKey": "df4a9e27ae4358da49df201b51a420cc36c9f18d",
+      "variants": {
+        "Positive":  { "layers": { "__root__": "color/feedback/positive/surface" }, "textLayer": "Body" },
+        "Warning":   { "layers": { "__root__": "color/feedback/warning-soft/surface" }, "textLayer": "Body" },
+        "Error":     { "layers": { "__root__": "color/feedback/error/surface" }, "textLayer": "Body" },
+        "Neutral":   { "layers": { "__root__": "color/background/secondary" }, "textLayer": "Body" },
+        "Highlight": { "layers": { "__root__": "color/ai/surface" }, "textLayer": "Body" }
+      }
+    },
+
+    "Switch": {
+      "setKey": "bfd443a0c54b4f4b403c11a77872c32a994bd034",
+      "_note": "Layer names are lowercase: 'track', 'thumb'.",
+      "variants": {
+        "Selected":   { "layers": { "track": "color/interactive/primary" } },
+        "Unselected": { "layers": { "track": "color/background/tertiary" } }
+      }
+    },
+
+    "Visual Filters": {
+      "setKey": "fa4a4d2b797554e313ad6acebbe5e8ee9f2fee8a",
+      "variants": {
+        "Normal": {
+          "layers": { "Title_Visual": "color/text/primary" },
+          "textLayer": "Title_Visual"
+        },
+        "Active": {
+          "layers": { "__root__": "color/interactive/primary", "Title_Visual": "color/text/brand" },
+          "textLayer": "Title_Visual"
+        }
+      }
+    },
+
+    "Rating": {
+      "setKey": "17ee8eecb1586f13a9640a4ef203a70c4edb1383",
+      "_note": "All rating values share the same structure. Text node name is the rating number (content-based).",
+      "variants": {
+        "default": {
+          "layers": { "__root__": "color/feedback/positive/surface" }
+        }
+      }
+    },
+
+    "Size chips": {
+      "setKey": "6615ce2e2e47eaa3d62f5aea2bc98cf6e906e425",
+      "_note": "Text node name is content-based ('X', 'S', 'M', etc.). Set text via inst.findOne(n => n.type === 'TEXT').",
+      "variants": {
+        "Default/Available": {
+          "layers": { "__root__": "color/background/secondary" }
+        },
+        "Active/Available": {
+          "layers": { "__root__": "color/interactive/primary" }
+        },
+        "Default/Unavailable": {
+          "layers": { "__root__": "color/background/secondary" }
+        },
+        "Active/Unavailable": {
+          "layers": { "__root__": "color/background/secondary" }
+        }
+      }
+    },
+
+    "Stepper": {
+      "setKey": "9d34aba6968872f658f811d43865d71fa06515d7",
+      "_note": "Text node name is content-based (quantity number). Rectangles 319/320 are +/- button fills.",
+      "variants": {
+        "Normal": {
+          "layers": { "__root__": "color/background/secondary" }
+        },
+        "Minimum": {
+          "layers": { "__root__": "color/background/secondary" }
+        },
+        "Maximum": {
+          "layers": { "__root__": "color/background/secondary" }
+        }
+      }
+    },
+
+    "Line Icons": {
+      "setKey": "9a9dd571d860bf2622aa23b6ba3f0cde05555918",
+      "_note": "No fill binding — color is inherited from parent context or set on Shape/Vector child directly.",
+      "defaultTokens": {
+        "Shape":  "color/text/primary",
+        "Vector": "color/text/primary"
+      }
+    }
+  }
+}

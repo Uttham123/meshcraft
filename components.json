@@ -1,0 +1,334 @@
+{
+  "_meta": {
+    "version": "2.0.0",
+    "system": "MESH Design System",
+    "platform": "Android",
+    "updatedAt": "2026-04-16",
+    "team": "Meesho Browsing Experience Team",
+    "figmaDoc": "https://www.figma.com/design/6rNoOl7gVBz66geQEJpmeh/MESH-Documentation",
+    "figmaSandbox": "https://www.figma.com/design/u6xWbRPNRJgem7EwDrKfqr/MESH-Design-Sandbox",
+    "touchTargetMinimum": "48dp",
+    "gridBase": "4px"
+  },
+  "components": {
+    "Button": {
+      "category": "molecule",
+      "figmaPageId": "265:3255",
+      "description": "Triggers an action or navigation. Always labelled. The primary driver of user flow in Meesho.",
+      "variants": {
+        "type": ["primary", "secondary-grey", "secondary-jamun", "tertiary-link", "icon"],
+        "size": ["large", "medium", "small"]
+      },
+      "anatomy": {
+        "1": "Container",
+        "2": "Label",
+        "3": "Leading Icon (optional)",
+        "4": "Trailing Icon (optional)"
+      },
+      "tokens": {
+        "primary.background.default": "button/primary/background/default",
+        "primary.background.disabled": "button/primary/background/disabled",
+        "primary.text.default": "button/primary/text/default",
+        "primary.text.disabled": "button/primary/text/disabled",
+        "secondary.background": "button/secondary/background/default",
+        "secondary.border": "button/secondary/border/default",
+        "secondary.text": "button/secondary/text/default",
+        "link.text": "button/link/text/default",
+        "radius": "button/radius",
+        "height.large": "48dp",
+        "height.medium": "36dp",
+        "height.small": "28dp"
+      },
+      "states": ["default", "pressed", "disabled"],
+      "doRules": [
+        "Use Primary (Jamun/purple) for the single most important action on the screen.",
+        "Use Secondary-Grey for confirmatory/cancel actions alongside a primary.",
+        "Use Tertiary-Link for low-emphasis actions like 'See all' or 'Skip'.",
+        "Icon buttons must have a visible selected state (line icon → filled icon).",
+        "Minimum touch target is 48dp height even for small buttons."
+      ],
+      "dontRules": [
+        "Don't stack two Primary buttons on the same screen.",
+        "Don't use Primary button for destructive actions — use Secondary with red text.",
+        "Don't use CTA-style labels longer than 3 words on small buttons.",
+        "Don't reduce opacity for disabled state — use explicit disabled token colors.",
+        "Don't use icon-only buttons without a tooltip or context label."
+      ],
+      "usageContext": "Use Button for actions. Use Pill for filters/selections. Use Infobanner CTA for contextual inline actions.",
+      "usedIn": ["ProductPage", "Checkout", "EmptyState", "PopUp", "BottomSheet", "ActionBar"],
+      "t3t4Constraints": {
+        "touchTarget": "48dp minimum height",
+        "labelLength": "Keep under 4 words for readability on small screens",
+        "contrast": "Primary button must maintain 4.5:1 contrast ratio on white background"
+      }
+    },
+    "Badge": {
+      "category": "molecule",
+      "figmaPageId": "296:6770",
+      "description": "Non-interactive visual indicator for status, counts, or categorical information.",
+      "variants": {
+        "size": ["large", "small", "custom"],
+        "color": ["neutral", "positive", "negative", "highlight", "yellow", "orange"]
+      },
+      "anatomy": {
+        "1": "Container (faded fill)",
+        "2": "Label",
+        "3": "Icon (optional, customizable)"
+      },
+      "tokens": {
+        "neutral.background": "badge/neutral/background",
+        "neutral.text": "badge/neutral/text",
+        "positive.background": "badge/positive/background",
+        "positive.text": "badge/positive/text",
+        "negative.background": "badge/negative/background",
+        "negative.text": "badge/negative/text",
+        "highlight.background": "badge/highlight/background",
+        "highlight.text": "badge/highlight/text",
+        "yellow.background": "badge/yellow/background",
+        "yellow.text": "badge/yellow/text",
+        "orange.background": "badge/orange/background",
+        "orange.text": "badge/orange/text",
+        "radius": "badge/radius"
+      },
+      "states": ["default"],
+      "doRules": [
+        "Use positive (green) for confirmed/completed states.",
+        "Use negative (red) for error, rejected, or out-of-stock states.",
+        "Use highlight (blue) for informational, new, or featured states.",
+        "Keep badge labels short — ideally 1-2 words or a number."
+      ],
+      "dontRules": [
+        "Don't make badges clickable — use Pill component for interactive filters.",
+        "Don't use more than 2 badges on a single card.",
+        "Don't use custom color variants outside the defined 6-color system."
+      ],
+      "usageContext": "Use Badge for non-interactive status display. Use Pill for clickable filters. Use Infobanner for page-level messages.",
+      "usedIn": ["ProductCard", "OrderList", "JourneyStatus"]
+    },
+    "InputField": {
+      "category": "molecule",
+      "figmaPageId": "350:5040",
+      "description": "Allows users to enter text. Uses an underlined (not outlined) style for clear affordance with minimal visual weight.",
+      "variants": {
+        "type": ["no-addons", "supporting-text", "cta", "character-counter", "dropdown", "icon-cta", "scrollbar"],
+        "state": ["resting", "active", "filled", "disabled", "error"]
+      },
+      "anatomy": {
+        "1": "Label",
+        "2": "Input Text",
+        "3": "Action/CTA (optional)",
+        "4": "Activation Indicator (underline)",
+        "5": "Supporting Text (optional)"
+      },
+      "tokens": {
+        "border.resting": "input/border/resting",
+        "border.active": "input/border/active",
+        "border.error": "input/border/error",
+        "border.disabled": "input/border/disabled",
+        "text.default": "input/text/default",
+        "text.placeholder": "input/text/placeholder",
+        "text.label": "input/text/label",
+        "text.error": "input/text/error",
+        "text.disabled": "input/text/disabled",
+        "background": "input/background/default"
+      },
+      "states": ["resting", "active", "filled", "disabled", "error"],
+      "doRules": [
+        "Always show a visible label above the input field.",
+        "Use supporting text for format hints (e.g. '10-digit mobile number').",
+        "Error state must show red underline AND error message text below.",
+        "Active state indicator (underline) must be brand color (#9F2089)."
+      ],
+      "dontRules": [
+        "Don't use placeholder text as the only label — it disappears on focus.",
+        "Don't use outlined/boxed input style — MESH uses underline style only.",
+        "Don't place more than one CTA action inside a single input field."
+      ],
+      "usageContext": "Use for all text data collection. For numeric quantity changes use InputStepper. For option selection use Dropdown variant.",
+      "usedIn": ["LoginFlow", "AddressForm", "SearchBar", "ProfileEdit"]
+    },
+    "Infobanner": {
+      "category": "molecule",
+      "figmaPageId": "490:9839",
+      "description": "Contextual message that distinguishes important information from surrounding body text.",
+      "variants": {
+        "size": ["big", "small", "big-inset", "small-inset"],
+        "semantic": ["neutral", "positive", "error", "warning", "highlight"],
+        "icon": ["with-icon", "no-icon"]
+      },
+      "anatomy": {
+        "1": "Icon (filled, optional)",
+        "2": "Content area",
+        "3": "Label"
+      },
+      "tokens": {
+        "neutral.background": "infobanner/neutral/background",
+        "neutral.icon": "infobanner/neutral/icon",
+        "positive.background": "infobanner/positive/background",
+        "positive.icon": "infobanner/positive/icon",
+        "error.background": "infobanner/error/background",
+        "error.icon": "infobanner/error/icon",
+        "warning.background": "infobanner/warning/background",
+        "warning.icon": "infobanner/warning/icon",
+        "highlight.background": "infobanner/highlight/background",
+        "highlight.icon": "infobanner/highlight/icon"
+      },
+      "doRules": [
+        "Match semantic color to message type: green=success, red=error, yellow=warning, blue=info.",
+        "Use Big size when the message has a multi-line label or requires emphasis.",
+        "Use Inset variant inside cards or contained surfaces."
+      ],
+      "dontRules": [
+        "Don't use more than one Infobanner on the same screen.",
+        "Don't use Infobanner for page-level errors — use Snackbar instead.",
+        "Don't use the error Infobanner for warnings — semantic color must match message intent."
+      ],
+      "usageContext": "Use for inline contextual messages. Use Snackbar for transient system feedback. Use Pop-Up for blocking decisions.",
+      "usedIn": ["ProductPage", "Checkout", "CustomerSupport", "OrderTracking"]
+    },
+    "PopUp": {
+      "category": "molecule",
+      "figmaPageId": "471:8299",
+      "description": "Modal dialog that interrupts the user flow to present critical information or require a decision.",
+      "variants": {
+        "type": ["with-headline", "without-headline"]
+      },
+      "anatomy": {
+        "1": "Container",
+        "2": "Headline (optional)",
+        "3": "Body",
+        "4": "Buttons (1-2 actions)",
+        "5": "Overlay (scrim)"
+      },
+      "tokens": {},
+      "doRules": [
+        "Use sparingly — only when user must make a decision to continue.",
+        "Always provide at least one dismissal action.",
+        "Tapping the overlay or Android back button must dismiss the pop-up."
+      ],
+      "dontRules": [
+        "Don't use for non-critical information — use Infobanner or Snackbar instead.",
+        "Don't stack more than one pop-up.",
+        "Don't use more than 2 action buttons in a single pop-up."
+      ],
+      "usageContext": "Use when the action is irreversible (delete, cancel order) or requires acknowledgment. For non-blocking info use Snackbar.",
+      "usedIn": ["Cart", "OrderCancel", "AddressDelete", "PermissionRequest"]
+    },
+    "Loader": {
+      "category": "molecule",
+      "figmaPageId": "477:11383",
+      "description": "Indicates loading or processing state. Uses the Meesho brand logo mark as the spinner.",
+      "variants": {
+        "type": ["with-body-text", "without-body-text"]
+      },
+      "anatomy": {
+        "1": "Loader (Meesho 'm' mark animated)",
+        "2": "Body Text (optional)",
+        "3": "Container",
+        "4": "Overlay"
+      },
+      "doRules": [
+        "Show body text when the expected wait time is longer than 3 seconds.",
+        "Always use the dark overlay when displaying over app content."
+      ],
+      "dontRules": [
+        "Don't use the Loader for skeleton states — build skeleton screens separately.",
+        "Don't use the 'm' logo as the AI Indicator — it is reserved for the Loader component."
+      ],
+      "usageContext": "Use for full-screen blocking loading states. Use skeleton screens for content placeholders.",
+      "usedIn": ["AppLaunch", "PageTransition", "PaymentProcessing"]
+    },
+    "Snackbar": {
+      "category": "molecule",
+      "figmaPageId": "490:9838",
+      "description": "Transient, non-blocking notification shown at the bottom of the screen. Auto-dismisses.",
+      "anatomy": {
+        "1": "Container (dark background)",
+        "2": "Message text",
+        "3": "Icon (optional)",
+        "4": "Action text (optional)"
+      },
+      "tokens": {
+        "background": "snackbar/background",
+        "text": "snackbar/text",
+        "positive.background": "snackbar/positive/background",
+        "radius": "snackbar/radius"
+      },
+      "doRules": [
+        "Auto-dismiss after 3-4 seconds.",
+        "Keep message under 60 characters.",
+        "Use positive (green) background for success confirmations."
+      ],
+      "dontRules": [
+        "Don't use for critical errors that require user action — use Pop-Up.",
+        "Don't show more than one Snackbar at a time."
+      ],
+      "usageContext": "Use for transient system feedback (item added to cart, address saved). Use Pop-Up for decisions. Use Infobanner for persistent contextual messages.",
+      "usedIn": ["Cart", "Wishlist", "Profile", "OrderActions"]
+    },
+    "BottomNav": {
+      "category": "organism",
+      "figmaPageId": "699:10615",
+      "description": "Persistent bottom navigation bar with 4-5 top-level destinations. Each destination has an icon and label.",
+      "variants": {
+        "destinations": [4, 5]
+      },
+      "anatomy": {
+        "1": "Container",
+        "2": "Selected Destination (filled icon + label)",
+        "3": "Unselected Destination (outlined icon + label)"
+      },
+      "tokens": {
+        "background": "bottomnav/background",
+        "icon.active": "bottomnav/icon/active",
+        "icon.inactive": "bottomnav/icon/inactive",
+        "label.active": "bottomnav/label/active",
+        "label.inactive": "bottomnav/label/inactive",
+        "border.top": "bottomnav/border/top"
+      },
+      "states": ["selected", "unselected"],
+      "doRules": [
+        "Use filled icons for selected state, outlined icons for unselected.",
+        "Always show text labels alongside icons.",
+        "Bottom Nav hides on scroll down and reappears on scroll up."
+      ],
+      "dontRules": [
+        "Don't use more than 5 or fewer than 4 destinations.",
+        "Don't use Bottom Nav on secondary screens — only on top-level destinations."
+      ],
+      "usageContext": "Use for the app's 4-5 primary sections. Use Tabs for secondary section switching within a page.",
+      "usedIn": ["HomeScreen", "CategoryScreen", "OrdersScreen", "CommunityScreen", "AccountScreen"]
+    },
+    "TopNav": {
+      "category": "organism",
+      "figmaPageId": "700:27896",
+      "description": "App bar at the top of each screen providing title, navigation, and contextual actions.",
+      "variants": {
+        "type": ["home", "back-no-icons", "back-link-cta", "back-primary-cta", "back-icons"]
+      },
+      "anatomy": {
+        "1": "Container",
+        "2": "Back Chevron (navigation screens only)",
+        "3": "User Profile / Title",
+        "4": "Action Icons (right side)"
+      },
+      "tokens": {
+        "background": "topnav/background",
+        "title.text": "topnav/title/text",
+        "icon.default": "topnav/icon/default",
+        "border.bottom": "topnav/border/bottom"
+      },
+      "doRules": [
+        "Top Nav hides on scroll down and reappears when user scrolls up.",
+        "Use Back+Primary CTA variant only when the screen has a single primary action.",
+        "User profile avatar appears only on the Home variant."
+      ],
+      "dontRules": [
+        "Don't show more than 3 action icons in the right zone.",
+        "Don't use Top Nav for bottom sheets or modal overlays."
+      ],
+      "usageContext": "Required on all full-page screens. Not used inside bottom sheets or modals.",
+      "usedIn": ["AllScreens"]
+    }
+  }
+}

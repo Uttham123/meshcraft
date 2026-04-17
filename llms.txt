@@ -1,0 +1,90 @@
+# MESH Design System — LLM Context File
+# Version 2.0 | April 2026 | Meesho Design Team
+# Feed this file into your AI context before working with MESH components.
+
+## SYSTEM OVERVIEW
+MESH is the Meesho Design System for Android (mobile-first). It serves 140M+ users across buyer and seller surfaces. T3/T4 user base — low-end devices, mixed digital literacy, bilingual (English + Hindi).
+
+## FIGMA FILES
+- Documentation: https://www.figma.com/design/6rNoOl7gVBz66geQEJpmeh/MESH-Documentation
+- Design Sandbox (tokens): https://www.figma.com/design/u6xWbRPNRJgem7EwDrKfqr/MESH-Design-Sandbox
+
+## TOKEN QUICK REFERENCE
+### Brand Colors
+color/brand/default = #9F2089 (Jamun purple — CTAs, active states)
+color/brand/secondary = #D9A6D0
+color/brand/background = #FFE7FB
+
+### Backgrounds
+color/background/primary = #F0F0F0
+color/background/secondary = #FFFFFF
+color/background/tertiary = #F9F9F9
+
+### Content (Text)
+color/content/primary = #333333
+color/content/secondary = #666666
+color/content/tertiary = #999999
+color/content/inverse = #FFFFFF
+
+### Borders
+color/border/default = #DFDFDF
+
+### Feedback
+color/feedback/success/default = #038D63 | background = #D3F4EA
+color/feedback/info/default = #5585F8 | background = #E7EEFF
+color/feedback/warning/default = #F4B619 | background = #FFF4D7
+color/feedback/caution/default = #EE7212 | background = #FFE8CD
+color/feedback/error/default = #E11900 | background = #FFDAD6
+
+### AI Surfaces (RESERVED — do not reuse for brand)
+color/ai/surface = #E7EEFF
+color/ai/border = #5585F8
+color/ai/icon = #5585F8
+
+## TYPOGRAPHY QUICK REFERENCE
+Font: Mier B02 (Bold/Demi/Book)
+H1=35px/Bold/40lh | H2=29px/Bold/36lh | H3=25px/Bold/28lh
+H4=21px/Bold/24lh | H5=19px/Bold/24lh | H6=17px/Bold/24lh
+Body1=15px/Book/20lh | Body2=13px/Book/20lh | Body3=11px/Book/16lh
+Subtitle1=15px/Demi/20lh | Subtitle2=13px/Demi/20lh
+Caption1=12px/Book/16lh | Caption2=11px/Book/16lh | Caption3=10px/Book/12lh
+Button/Large=17px/Demi/24lh | Button/Small=13px/Demi/20lh
+Link=13px/Demi/20lh (underlined) | Overline=11px/Demi/16lh (uppercase)
+
+## SPACING
+Grid: 4px. Scale: 0, 4, 8, 12, 16, 20, 24, 28, 32, 40, 48, 56, 64px
+Touch target minimum: 48dp × 48dp (all interactive elements)
+Corner radii: 4px (buttons/inputs), 8px (cards), 16px (pills), 100px (circles)
+
+## COMPONENT INVENTORY
+Atoms: Colors, Typography, Grid, Icons, Shadows, Corners
+Molecules: Badge, Button, Divider, Dropdown, Image Displays, Infobanners, Input Field, Input Stepper, Loader, NPS, Pill, Pop-Ups, Progress Bar, Rating Pill, Scrollbar, Snackbar, Switch, Visual Filters
+Organisms: Action Bar, Bottom Nav, Bottom Sheet Header, Tabs, Top Nav, Video Player (WIP)
+
+## COMPONENT QUICK RULES
+Button: Primary=jamun/purple CTAs | Secondary-Grey=cancel/confirm | Tertiary-Link=low emphasis | Icon=nav actions. Never stack 2 primary buttons.
+Badge: Always non-clickable. Neutral/Positive/Negative/Highlight/Yellow/Orange. Max 2 per card.
+Input Field: Underline style only (not outlined). Active underline = brand color. Error = red underline + error text.
+Infobanner: Use semantic color. Max 1 per screen. Not for transient messages (use Snackbar).
+Pop-Up: Interrupts flow. Always dismissible. Max 2 actions. Tapping overlay dismisses it.
+Loader: Brand 'm' spinner. Add body text for waits > 3 seconds.
+Snackbar: Auto-dismiss 3-4s. Max 60 chars. One at a time.
+Bottom Nav: 4-5 destinations. Hides on scroll down, shows on scroll up.
+Top Nav: All screens. Hides on scroll down, shows on scroll up.
+
+## AI PATTERNS
+- AI Indicator: Blue surface (#E7EEFF, border #5585F8) on any AI-generated content.
+- Two personas: "Dukaan Saathi" (sellers, verify-then-publish, formal) | "Shopping Guide" (buyers, inform-then-decide, warm)
+- Harm rule 1: AI product details → mandatory human review before PDP
+- Harm rule 2: AI refund guidance → escalation path to human agent
+- Never use brand purple (#9F2089) on AI surfaces
+- Never use AI blue (#5585F8, #E7EEFF) for brand CTAs
+
+## STRICT RULES FOR AI TOOLS
+1. Always use semantic tokens (Tier 2), never primitive tokens, in component specs.
+2. Never invent a color — every color must map to a token.
+3. Never set touch targets below 48dp for interactive components.
+4. Never create a button variant not in this list: primary, secondary-grey, secondary-jamun, tertiary-link, icon.
+5. Never use H1 for anything below page-title level.
+6. Never use color alone to convey meaning — pair with icon or text.
+7. Bilingual support is required — assume all text nodes need to accommodate Hindi (Devanagari) which runs ~30% longer.

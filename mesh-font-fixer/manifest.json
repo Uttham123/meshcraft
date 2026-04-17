@@ -1,0 +1,8 @@
+{
+  "name": "MESH Font Fixer",
+  "id": "mesh-font-fixer-001",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"],
+  "ui": "ui.html"
+}
