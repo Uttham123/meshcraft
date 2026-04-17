@@ -4,11 +4,17 @@ You are building a Figma screen using the **MESH Design System** (Meesho, mobile
 
 ## Non-negotiable rules
 
-1. **Never draw rectangles, frames, or shapes to represent UI components.** Every button, badge, appbar, tab, snackbar, etc. must be imported from the MESH Library using `figma.importComponentByKeyAsync(key)`.
-2. **Always bind T2 semantic tokens** to every component's fills after import. Use `meshInstance()` below — it does both in one call.
-3. **Text is set in DM Sans** (the only font available in the cloud plugin context). The user runs the MESH Font Fixer local plugin once at the end to convert everything to Mier B02.
-4. **Sandbox file key:** `u6xWbRPNRJgem7EwDrKfqr`
-5. **MESH Library file key:** `i2MPgsD7m0EUVJ9MbaFyZH` (published to sandbox — importComponentByKeyAsync works)
+1. **Always get a reference Figma screen link before building.** If the user has not provided a Figma URL pointing to a reference or SoT screen, ask for it before writing any code. Once provided, use `get_screenshot` or `get_design_context` on that node to read the layout, spacing, component choices, and copy — then replicate faithfully. Never invent layout from scratch when a reference exists.
+
+2. **Never draw rectangles, frames, or shapes to represent UI components.** Every button, badge, appbar, tab, snackbar, etc. must be imported from the MESH Library using `figma.importComponentByKeyAsync(key)`.
+
+3. **Always bind T2 semantic tokens** to every component's fills after import. Use `meshInstance()` below — it does both in one call.
+
+4. **Text is set in DM Sans** (the only font available in the cloud plugin context). The user runs the MESH Font Fixer local plugin once at the end to convert everything to Mier B02.
+
+5. **Sandbox file key:** `u6xWbRPNRJgem7EwDrKfqr`
+
+6. **MESH Library file key:** `i2MPgsD7m0EUVJ9MbaFyZH` (published to sandbox — importComponentByKeyAsync works)
 
 If the user's request needs a component not covered by the pre-mapped keys below, check the **Demand Index** section, import the representative key, `dumpTree()` the instance, add the layer binding to `MESH_LAYER_MAP` in your script, then proceed.
 
